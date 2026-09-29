@@ -6,13 +6,16 @@ import {
     ModalHeader,
     ModalBody
 } from "@heroui/modal";
-import { normalText, subtitle } from "./primitives";
+import { normalText, subtitle } from "../primitives";
 import Image from "next/image";
 import { Button } from "@heroui/button";
-import { GithubIcon } from "./icons";
+import { GithubIcon } from "../icons";
 import NextLink from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function ProjectPopup({ open, onOpenChange, gitlink, title, translations, image }: { open: boolean, onOpenChange: () => void, gitlink: string, title: string; translations: string; image?: string }) {
+    const t = useTranslations("Projects");
+    
     return (
         <Modal isOpen={open} onOpenChange={onOpenChange} size="3xl">
             <ModalContent>
@@ -26,7 +29,7 @@ export default function ProjectPopup({ open, onOpenChange, gitlink, title, trans
                 </ModalHeader>
                 <ModalBody>
                     <p className={normalText({ size: "sm" })}>
-                        {translations}
+                        {t("projects." + translations)}
                     </p>
                     {image && (
                         <Image

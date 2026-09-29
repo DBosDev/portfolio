@@ -2,7 +2,7 @@
 
 import { Card } from "@heroui/card";
 import { Button } from "@heroui/button";
-import { subtitle } from "./primitives";
+import { subtitle } from "../primitives";
 import Image from "next/image";
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import { useDisclosure } from "@heroui/modal";
