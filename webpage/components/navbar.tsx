@@ -17,9 +17,10 @@ import { useTranslations } from "next-intl";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { GithubIcon, GlobeIcon } from "@/components/icons";
 import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
+import { Github01Icon, Globe02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -47,8 +48,8 @@ export const Navbar = () => {
       </NavbarContent>
       <NavbarContent className="basis-3/5 sm:basis-full" justify="end">
         <Dropdown>
-          <DropdownTrigger>
-            <GlobeIcon className="cursor-pointer" />
+          <DropdownTrigger className="cursor-pointer">
+            <HugeiconsIcon icon={Globe02Icon} />
           </DropdownTrigger>
           <DropdownMenu
             onAction={(key) => {
@@ -61,8 +62,8 @@ export const Navbar = () => {
             </DropdownSection>
           </DropdownMenu>
         </Dropdown>
-        <NextLink href="https://github.com/DBosDavinci" target="_blank" rel="noopener noreferrer">
-          <GithubIcon className="text-default-500" />
+        <NextLink href="https://github.com/DBosDev" target="_blank" rel="noopener noreferrer" className="text-default-500">
+          <HugeiconsIcon icon={Github01Icon} />
         </NextLink>
       </NavbarContent>
     </HeroUINavbar>

@@ -9,9 +9,10 @@ import {
 import { normalText, subtitle } from "../primitives";
 import Image from "next/image";
 import { Button } from "@heroui/button";
-import { GithubIcon } from "../icons";
 import NextLink from "next/link";
 import { useTranslations } from "next-intl";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Github01Icon } from "@hugeicons/core-free-icons";
 
 export default function ProjectPopup({ open, onOpenChange, gitlink, title, translations, image }: { open: boolean, onOpenChange: () => void, gitlink: string, title: string; translations: string; image?: string }) {
     const t = useTranslations("Projects");
@@ -24,7 +25,7 @@ export default function ProjectPopup({ open, onOpenChange, gitlink, title, trans
                         {title}
                     </h2>
                     <Button href={gitlink} isIconOnly as={NextLink} target="_blank" rel="noopener noreferrer">
-                        <GithubIcon className="w-6 h-6" />
+                        <HugeiconsIcon icon={Github01Icon} className="w-6 h-6" />
                     </Button>
                 </ModalHeader>
                 <ModalBody>
