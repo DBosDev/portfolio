@@ -3,9 +3,7 @@
 import { Card } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { subtitle } from "./primitives";
-import { GithubIcon } from "./icons";
 import Image from "next/image";
-import NextLink from "next/link";
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import { useDisclosure } from "@heroui/modal";
 import ProjectPopup from "./projectPopup";
@@ -15,15 +13,12 @@ export default function ProjectCard({ title, gitlink, translations, image }: { t
 
     return (
         <div>
-            <ProjectPopup open={isOpen} onOpenChange={onOpenChange} title={title} translations={translations} image={image} />
+            <ProjectPopup open={isOpen} onOpenChange={onOpenChange} gitlink={gitlink} title={title} translations={translations} image={image} />
             <Card className="mt-6 p-6">
                 <div className="flex items-center space-x-2">
                     <h2 className={subtitle({ fullWidth: false })}>
                         {title}
                     </h2>
-                    <Button href={gitlink} isIconOnly as={NextLink} target="_blank" rel="noopener noreferrer">
-                        <GithubIcon className="w-6 h-6" />
-                    </Button>
                     <Button onPress={onOpen} isIconOnly>
                         <Bars3Icon className="w-6 h-6" />
                     </Button>
